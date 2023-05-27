@@ -9,9 +9,12 @@ const axios = require('axios');
 const app = express();
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Express server!');
+});
+
 app.get('/api/images', async (req, res) => {
- // const url = `https://api.pexels.com/v1/search?query=${req.query.query}&page=${req.query.page}&per_page=${req.query.per_page}`;
-  const url = `https://api.pexels.com/v1/search?query=random&page=1&per_page=10`;
+  const url = `https://api.pexels.com/v1/search?query=${req.query.query}&page=${req.query.page}&per_page=${req.query.per_page}`;
   try {
     const response = await axios.get(url, {
       headers: {

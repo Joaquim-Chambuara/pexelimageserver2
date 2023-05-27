@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get('/api/images', async (req, res) => {
  // const url = `https://api.pexels.com/v1/search?query=${req.query.query}&page=${req.query.page}&per_page=${req.query.per_page}`;
-  const url = `https://api.pexels.com/v1/search?query=random&page=1&per_page=1-`;
+  const url = `https://api.pexels.com/v1/search?query=random&page=1&per_page=10`;
   try {
     const response = await axios.get(url, {
       headers: {
